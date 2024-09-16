@@ -32,3 +32,5 @@ This project contains the following main components:
 - **PHP**: For backend logic and interaction with the database.
 - **MySQL**: Database management system for storing data such as donors, patients, blood inventory, etc.
 - **HTML/CSS**: For building and styling the user interface of the application.
+
+![Main page](https://github.com/user-attachments/assets/2715a21f-7f07-4a98-9e49-d4a56cf27b75)
