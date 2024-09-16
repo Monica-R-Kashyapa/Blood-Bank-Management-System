@@ -33,4 +33,7 @@ This project contains the following main components:
 - **MySQL**: Database management system for storing data such as donors, patients, blood inventory, etc.
 - **HTML/CSS**: For building and styling the user interface of the application.
 
+** Results **
 ![Main page](https://github.com/user-attachments/assets/2715a21f-7f07-4a98-9e49-d4a56cf27b75)
+![Dashboard](https://github.com/user-attachments/assets/32154d18-5b07-465b-ae9c-fb959941bcc3)
+- Total number of entries.
