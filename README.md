@@ -37,6 +37,10 @@ This project contains the following main components:
 - Main Page
 ![Main page](https://github.com/user-attachments/assets/2715a21f-7f07-4a98-9e49-d4a56cf27b75)
 
--Dashboard
+- Dashboard
 ![Dashboard](https://github.com/user-attachments/assets/32154d18-5b07-465b-ae9c-fb959941bcc3)
 - Total number of entries.
+
+- Donor Page
+
+- Manage Donor details
