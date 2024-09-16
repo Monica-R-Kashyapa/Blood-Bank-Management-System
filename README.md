@@ -43,4 +43,4 @@ This project contains the following main components:
 
 - Donor Page
 ![Donor](https://github.com/user-attachments/assets/2b4665e3-8249-4206-9b5f-9a03979b3416)
-  Manage Donor details
+  Manage Doctor details
