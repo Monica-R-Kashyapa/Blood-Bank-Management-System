@@ -1,32 +1,32 @@
  # Blood Bank Management System
 
-This repository contains a **Blood Bank Management System** built using **PHP**, **MySQL**, **HTML**, and **CSS**. The system is designed to efficiently manage blood donations, blood bank inventories, donor information, and blood requests for hospitals and patients.
+The Blood Bank Management System is a web application designed to manage blood donations, deliveries, and related medical data. It provides a comprehensive interface for tracking blood banks, donors, patients, doctors, and blood deliveries.
 
-## Project Components
+## Features
+- Manage blood banks
+- Track blood donations and deliveries
+- Manage doctors, donors, and patients
 
-This project contains the following main components:
 
-1. **Dashboard**: The main admin interface to manage and oversee all the activities in the blood bank system, including donors, blood stock, and blood requests.
+## File Structure
+The project contains the following PHP files and components:
 
-2. **Blood**: A module that handles blood-related details such as available blood types, their quantities, and stock management in the system.
+- PHP Files
+  - dashboard.php: Admin dashboard for overview and management.
+  - blood.php: Manage blood-related records.
+  - blood_banks.php: Manage blood banks.
+  - blood_deliveries.php: Track and manage blood deliveries.
+  - db/connection.php: Database connection script.
+  - doctors.php: Manage doctor records.
+  - donors.php: Manage donor records.
+  - patients.php: Manage patient records.
 
-3. **Blood Banks**: Stores information related to various blood banks, including their location, contact information, and blood availability.
+- Database Schema
+  - schema.sql: SQL queries for setting up the database schema.
 
-4. **Blood Deliveries**: Manages the process of delivering blood from the blood bank to hospitals or patients in need. Tracks the status of deliveries.
-
-5. **Database Connection (db)**: The connection file that links the application to the MySQL database. Ensures data retrieval, updates, and storage.
-
-6. **Doctors**: A management module for doctor profiles. Allows the system to track which doctors are associated with specific patients or blood requests.
-
-7. **Donors**: Handles donor information and their donation history. Donors can register, and their data is stored for future reference.
-
-8. **Patients**: Manages patient profiles, including details on the patients who require blood and their corresponding blood requests.
-
-9. **Schema (MySQL Queries)**: Contains SQL queries to create the necessary database tables and structure. This includes tables for donors, blood, doctors, patients, and more.
-
-10. **Index (HTML)**: The homepage or landing page of the Blood Bank Management System, providing an overview of the system’s functionality and access points.
-
-11. **Style (CSS)**: Contains the CSS files that define the visual appearance of the website, ensuring a user-friendly and attractive interface.
+- User Interface
+  - index.html: The landing page of the system.
+  - style.css: CSS file for styling the application.
 
 ## Technologies Used
 - **PHP**: For backend logic and interaction with the database.
