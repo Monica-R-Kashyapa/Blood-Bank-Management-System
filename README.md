@@ -35,8 +35,9 @@ This project contains the following main components:
 
 ## Screenshots
 
-![Dashboard](static/images/dashboard.png)
-*Admin dashboard for managing donors, blood inventory, and requests.*
+![Main Page](C:\Users\meghanamonica\Desktop\Projects\ss\screenshot(2524).png)
+![Dashboard](C:\Users\meghanamonica\Desktop\Projects\ss\screenshot(2528).png)
+- * Total number of entires*
 
-![Donor Registration](static/images/donor_registration.png)
-*Donor registration page for new donors.*
+![Donor page ](C:\Users\meghanamonica\Desktop\Projects\ss\screenshot(2526).png)
+- * Manage donor details.*
