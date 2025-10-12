@@ -1,0 +1,322 @@
+/* Advanced Table Styling */
+.table-responsive {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* DataTables Custom Styling */
+table.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 0 8px !important;
+    background: transparent !important;
+    width: 100% !important;
+}
+
+/* Force table headers to show with gradient background */
+table.dataTable thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    display: table-header-group !important;
+}
+
+table.dataTable thead tr {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    display: table-row !important;
+}
+
+table.dataTable thead th,
+table thead.bg-gray-50 th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
+    padding: 16px 12px !important;
+    border: none !important;
+    position: relative !important;
+    display: table-cell !important;
+    text-align: left !important;
+}
+
+table.dataTable thead th:first-child {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+table.dataTable thead th:last-child {
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}
+
+/* Hide ALL default DataTables sorting icons completely */
+table.dataTable thead th.sorting:before,
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:before,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:before,
+table.dataTable thead th.sorting_desc:after,
+table.dataTable thead th.sorting_asc_disabled:before,
+table.dataTable thead th.sorting_asc_disabled:after,
+table.dataTable thead th.sorting_desc_disabled:before,
+table.dataTable thead th.sorting_desc_disabled:after,
+table.dataTable thead > tr > th.sorting:before,
+table.dataTable thead > tr > th.sorting:after,
+table.dataTable thead > tr > th.sorting_asc:before,
+table.dataTable thead > tr > th.sorting_asc:after,
+table.dataTable thead > tr > th.sorting_desc:before,
+table.dataTable thead > tr > th.sorting_desc:after {
+    content: '' !important;
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Remove background images that might be showing arrows */
+table.dataTable thead th.sorting,
+table.dataTable thead th.sorting_asc,
+table.dataTable thead th.sorting_desc {
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+}
+
+/* Custom sorting arrows in bottom right corner - single arrow only */
+table.dataTable thead th.sorting,
+table.dataTable thead th.sorting_asc,
+table.dataTable thead th.sorting_desc {
+    position: relative !important;
+    cursor: pointer !important;
+    padding-right: 30px !important;
+}
+
+/* Single arrow for unsorted state */
+table.dataTable thead th.sorting::after {
+    content: '⇅' !important;
+    position: absolute !important;
+    bottom: 6px !important;
+    right: 10px !important;
+    font-size: 11px !important;
+    opacity: 0.5 !important;
+    display: block !important;
+    color: white !important;
+}
+
+/* Single up arrow for ascending */
+table.dataTable thead th.sorting_asc::after {
+    content: '↑' !important;
+    position: absolute !important;
+    bottom: 6px !important;
+    right: 10px !important;
+    font-size: 12px !important;
+    opacity: 1 !important;
+    display: block !important;
+    color: white !important;
+}
+
+/* Single down arrow for descending */
+table.dataTable thead th.sorting_desc::after {
+    content: '↓' !important;
+    position: absolute !important;
+    bottom: 6px !important;
+    right: 10px !important;
+    font-size: 12px !important;
+    opacity: 1 !important;
+    display: block !important;
+    color: white !important;
+}
+
+table.dataTable tbody tr {
+    background: white !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s ease !important;
+    border-radius: 12px !important;
+}
+
+table.dataTable tbody tr:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+}
+
+table.dataTable tbody td {
+    padding: 16px 12px !important;
+    border: none !important;
+    color: #4a5568 !important;
+    font-size: 0.875rem !important;
+    vertical-align: middle !important;
+}
+
+table.dataTable tbody tr td:first-child {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    font-weight: 600 !important;
+    color: #2d3748 !important;
+}
+
+table.dataTable tbody tr td:last-child {
+    border-top-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+}
+
+/* DataTables Pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 8px 16px !important;
+    margin: 0 4px !important;
+    border-radius: 8px !important;
+    border: 2px solid #e2e8f0 !important;
+    background: white !important;
+    color: #4a5568 !important;
+    transition: all 0.3s ease !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: #667eea !important;
+    transform: scale(1.05) !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: #667eea !important;
+}
+
+/* DataTables Search */
+.dataTables_wrapper .dataTables_filter input {
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+    margin-left: 8px !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.875rem !important;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* DataTables Length */
+.dataTables_wrapper .dataTables_length select {
+    border: 2px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 8px 32px 8px 12px !important;
+    margin: 0 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.dataTables_wrapper .dataTables_length select:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+/* DataTables Info */
+.dataTables_wrapper .dataTables_info {
+    color: #718096 !important;
+    font-size: 0.875rem !important;
+    padding: 12px 0 !important;
+}
+
+/* Button Animations */
+.btn-custom {
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-custom::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translate(-50%, -50%) !important;
+    transition: width 0.6s, height 0.6s !important;
+}
+
+.btn-custom:hover::before {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Form Animations */
+.form-container {
+    animation: slideInLeft 0.5s ease-out !important;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card Hover Effects */
+.bg-white {
+    transition: all 0.3s ease !important;
+}
+
+.bg-white:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

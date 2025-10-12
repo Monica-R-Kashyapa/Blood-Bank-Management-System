@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-extrabold text-center text-red-700 mb-10 tracking-wide">
+        🩸 Blood Bank Management Dashboard
+    </h1>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="text-center mb-8">
+        <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-gray-500 text-lg">Loading dashboard data...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error" class="alert alert-danger d-none" role="alert"></div>
+
+    <!-- Charts Grid -->
+    <div id="chartsWrapper" class="overflow-y-auto max-h-[85vh]" style="display:none;">
+        <div id="chartsContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+            <!-- Entity Counts -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Entity Overview</h2>
+                <canvas id="entityChart"></canvas>
+            </div>
+
+            <!-- Blood Type Distribution -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Blood Type Distribution</h2>
+                <canvas id="bloodTypeChart"></canvas>
+            </div>
+
+            <!-- Donor Gender Distribution (swapped) -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Donor Gender Distribution</h2>
+                <canvas id="genderChart"></canvas>
+            </div>
+
+            <!-- Delivery Trends -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Delivery Trends</h2>
+                <canvas id="deliveryTrendChart"></canvas>
+            </div>
+
+            <!-- Top Donor Institutions -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Top Donor Institutions</h2>
+                <canvas id="institutionChart"></canvas>
+            </div>
+
+            <!-- Monthly Blood Donations -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Monthly Blood Donations</h2>
+                <canvas id="monthlyDonationChart"></canvas>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+canvas {
+    height: 280px !important;
+    max-height: 280px !important;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', loadDashboardData);
+
+function loadDashboardData() {
+    fetch('/api/dashboard-data')
+        .then(res => res.json())
+        .then(data => initializeCharts(data))
+        .catch(err => {
+            console.error(err);
+            showError('Error loading dashboard data. Please try again.');
+        });
+}
+
+function showError(msg) {
+    document.getElementById('loading').style.display = 'none';
+    const err = document.getElementById('error');
+    err.textContent = msg;
+    err.classList.remove('d-none');
+}
+
+function initializeCharts(data) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('chartsWrapper').style.display = 'block';
+
+    // Entity Overview
+    new Chart(document.getElementById('entityChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Doctors', 'Donors', 'Blood Banks', 'Blood Units', 'Patients', 'Deliveries'],
+            datasets: [{
+                label: 'Count',
+                data: [data.doctor_count, data.donor_count, data.blood_bank_count, data.blood_count, data.patient_count, data.delivery_count],
+                backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#f97316'],
+                borderRadius: 6
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2, plugins: { legend: { display: false } } }
+    });
+
+    // Blood Type Distribution
+    new Chart(document.getElementById('bloodTypeChart'), {
+        type: 'pie',
+        data: {
+            labels: data.blood_types.map(b => b.blood_type),
+            datasets: [{
+                data: data.blood_types.map(b => b.count),
+                backgroundColor: ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6', '#ec4899']
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    // Donor Gender Distribution
+    new Chart(document.getElementById('genderChart'), {
+        type: 'doughnut',
+        data: {
+            labels: data.genders.map(g => g.gender),
+            datasets: [{
+                data: data.genders.map(g => g.count),
+                backgroundColor: ['#3b82f6', '#ec4899', '#6b7280']
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2 }
+    });
+
+    // Delivery Trends
+    new Chart(document.getElementById('deliveryTrendChart'), {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Deliveries',
+                data: [10, 14, 20, 18, 24, 27],
+                borderColor: '#06b6d4',
+                backgroundColor: 'rgba(6,182,212,0.2)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2 }
+    });
+
+    // Top Donor Institutions
+    new Chart(document.getElementById('institutionChart'), {
+        type: 'bar',
+        data: {
+            labels: data.top_institutions.map(i => i.name),
+            datasets: [{
+                label: 'Donations',
+                data: data.top_institutions.map(i => i.count),
+                backgroundColor: '#f87171'
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2, plugins: { legend: { display: false } } }
+    });
+
+    // Monthly Blood Donations
+    new Chart(document.getElementById('monthlyDonationChart'), {
+        type: 'line',
+        data: {
+            labels: data.monthly_donations.map(m => m.month),
+            datasets: [{
+                label: 'Donations',
+                data: data.monthly_donations.map(m => m.count),
+                borderColor: '#22c55e',
+                backgroundColor: 'rgba(34,197,94,0.2)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: true, aspectRatio: 2 }
+    });
+}
+</script>
+{% endblock %}
