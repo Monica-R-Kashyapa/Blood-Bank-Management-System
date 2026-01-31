@@ -75,25 +75,6 @@ mysql -u root -p < sample_data.sql
 3. File → Run SQL Script → Select `schema.sql`
 4. File → Run SQL Script → Select `sample_data.sql`
 
-### 4. Configure Database Connection
-
-Edit `app.py` and update the database credentials:
-```python
-db_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'your_password',  # Change this
-    'database': 'blood_bank',
-    'cursorclass': pymysql.cursors.DictCursor
-}
-```
-
-### 5. Add Video (Optional)
-
-Place your blood donation video in:
-```
-static/videos/blood_donation.mp4
-```
 
 ## ▶️ Running the Application
 
@@ -102,62 +83,6 @@ python app.py
 ```
 
 The application will be available at: `http://localhost:5000`
-
-## 📁 Project Structure
-
-```
-bloodb/
-├── app.py                      # Main Flask application
-├── schema.sql                  # Database schema
-├── sample_data.sql            # Sample data for testing
-├── static/
-│   ├── style.css              # Custom CSS styles
-│   ├── images/                # Image assets
-│   │   ├── b1.png
-│   │   ├── b2.png
-│   │   ├── background.png
-│   │   ├── blood_cells.jpg
-│   │   └── blood_types.jpg
-│   ├── videos/                # Video files
-│   │   └── blood_donation.mp4
-│   └── js/
-│       └── main.js            # Custom JavaScript
-├── templates/
-│   ├── base.html              # Base template with navbar
-│   ├── index.html             # Landing page
-│   ├── dashboard.html         # Statistics dashboard
-│   ├── doctors.html           # Doctor management
-│   ├── donors.html            # Donor management
-│   ├── blood_banks.html       # Blood bank management
-│   ├── blood.html             # Blood inventory
-│   ├── patients.html          # Patient management
-│   └── blood_deliveries.html # Delivery tracking
-├── README.md                  # This file
-├── FEATURES.md               # Detailed features guide
-└── USER_GUIDE.md             # User manual
-
-```
-
-## 🎨 UI Highlights
-
-### Navigation Bar
-- Modern white design with blood drop logo (🩸)
-- Color-coded hover effects for each section
-- Smooth animations and transitions
-- Fully responsive
-
-### Tables
-- Purple gradient headers
-- Card-style rows with shadows
-- Hover effects (rows lift on hover)
-- Single sorting arrow indicators
-- Advanced search and pagination
-
-### Dashboard
-- Real-time statistics cards
-- Interactive charts (pie, doughnut, bar)
-- Color-coded sections
-- Responsive grid layout
 
 ## 📊 Database Schema
 
