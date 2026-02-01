@@ -2,7 +2,12 @@
 
 A modern, full-featured web application for managing blood banks, donors, patients, and blood deliveries. Built with Flask, MySQL, and modern UI frameworks.
 
-![Blood Bank Management System](static/images/b1.png)
+<p align="center">
+  <img src="static/images/b1.png"/><br>
+  <sub>Architecture</sub>
+</p>
+
+[▶ Watch Demo Video](static/videos/blood_donation.mp4)
 
 ## 🌟 Features
 
@@ -20,12 +25,6 @@ A modern, full-featured web application for managing blood banks, donors, patien
   - Blood type distribution (pie chart)
   - Gender distribution (doughnut chart)
   - Top institutions (bar chart)
-- **🔍 Advanced DataTables**: Sortable, searchable, and paginated tables
-- **✨ Modern UI/UX**: 
-  - Gradient backgrounds and smooth animations
-  - Responsive design (mobile-friendly)
-  - Hover effects and transitions
-  - Custom styled tables with purple gradient headers
 - **📹 Educational Content**: Embedded video about blood donation
 - **🎨 Beautiful Landing Page**: Informative home page with blood donation facts
 
@@ -42,48 +41,6 @@ A modern, full-featured web application for managing blood banks, donors, patien
 - **DataTables** - Advanced table features
 - **jQuery** - JavaScript library
 
-## 📋 Prerequisites
-
-- Python 3.7+
-- MySQL Server 5.7+
-- pip (Python package manager)
-
-## 🚀 Installation
-
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd bloodb
-```
-
-### 2. Install Python Dependencies
-```bash
-pip install flask pymysql
-```
-
-### 3. Set Up MySQL Database
-
-**Option A: Using MySQL Command Line**
-```bash
-mysql -u root -p < schema.sql
-mysql -u root -p < sample_data.sql
-```
-
-**Option B: Using MySQL Workbench**
-1. Open MySQL Workbench
-2. Connect to your MySQL server
-3. File → Run SQL Script → Select `schema.sql`
-4. File → Run SQL Script → Select `sample_data.sql`
-
-
-## ▶️ Running the Application
-
-```bash
-python app.py
-```
-
-The application will be available at: `http://localhost:5000`
-
 ## 📊 Database Schema
 
 ### Tables
@@ -95,3 +52,25 @@ The application will be available at: `http://localhost:5000`
 6. **Blood_delivery** - Delivery tracking
 
 See `schema.sql` for complete structure.
+
+## Screenshots
+### Home 
+
+<p align="center">
+  <img src="static/images/home.png" width="30%" />
+  <img src="static/images/home1.png" width="30%" />
+  <img src="static/images/home2.png" width="30%" />
+</p>
+
+### Dashboard
+
+![Img1](static/images/Dashboard.png)
+
+### Doctor, Blood Bank, Blood etc 
+
+<p align="center">
+  <img src="static/images/Doctor.png" width="30%" />
+  <img src="static/images/Blood_banks.png" width="30%" />
+  <img src="static/images/Blood.png" width="30%" />
+</p>
+
