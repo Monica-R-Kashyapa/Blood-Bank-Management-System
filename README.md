@@ -61,9 +61,9 @@ See `schema.sql` for complete structure.
 ### Home 
 
 <p align="center">
-  <img src="static/images/home.png" width="30%" />
-  <img src="static/images/home1.png" width="30%" />
-  <img src="static/images/home2.png" width="30%" />
+  <img src="static/images/Home.png" width="30%" />
+  <img src="static/images/Home1.png" width="30%" />
+  <img src="static/images/Home2.png" width="30%" />
 </p>
 
 ### Dashboard
@@ -73,7 +73,7 @@ See `schema.sql` for complete structure.
 ### Doctor, Blood Bank, Blood etc 
 
 <p align="center">
-  <img src="static/images/Doctor.png" width="30%" />
+  <img src="static/images/Doctors.png" width="30%" />
   <img src="static/images/Blood_banks.png" width="30%" />
   <img src="static/images/Blood.png" width="30%" />
 </p>
