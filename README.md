@@ -7,7 +7,7 @@ A modern, full-featured web application for managing blood banks, donors, patien
   <sub>Architecture</sub>
 </p>
 
-[▶ Watch Demo Video](static/videos/blood_donation.mp4)
+---
 
 ## 🌟 Features
 
@@ -27,6 +27,8 @@ A modern, full-featured web application for managing blood banks, donors, patien
   - Top institutions (bar chart)
 - **📹 Educational Content**: Embedded video about blood donation
 - **🎨 Beautiful Landing Page**: Informative home page with blood donation facts
+
+---
 
 ## 🛠️ Technology Stack
 
@@ -52,6 +54,8 @@ A modern, full-featured web application for managing blood banks, donors, patien
 6. **Blood_delivery** - Delivery tracking
 
 See `schema.sql` for complete structure.
+
+---
 
 ## Screenshots
 ### Home 
